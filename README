@@ -1,0 +1,66 @@
+Problem Statement
+=================
+
+Write code to generate a CSV file containing first_name, last_name, address, date_of_birth
+Load generated CSV in previous step, anonymise data and output of a different file
+Columns to anonymise are first_name, last_name and address
+
+Solution
+========
+
+Record generation and anonymise functionalities are contained fake_data_generator.py
+
+Step 1: Generate sample data in csv format
+
+Python's Faker module is used to generate  the records. These records will be saved as csv in 
+./fake_data/sample_source_data.csv. 
+
+Only 100 records are created. But you can change it by updating 'sample_record_count' variable in start.py 
+
+Step 2 : Anonimise the data generated in step 1
+
+ Read the file ./fake_data/sample_source_data.csv.
+
+ Anonymise first_name and last_name. I have used shuffling method to anonimise these data .
+ First_name is shuffled and then last_name is shuffled. This approach will ensure that the full name is completly changes and
+ the look and feel of data is not changes. We can use hashing or masking functions also . but I intentionally didnt use them 
+ in order to preserve the look and feel of the names
+
+ Anonymise address : The digits in address are replaced with '*' and the penultimate string token is also replaced with '*' .
+ If the address cannot be tokenised into multiple strings all the charactors are replaced with '*'
+
+ Anonymise dates : The date columns will be changed randomly by adding a random anomaly to the dates. 
+ This functionality is not called by default as date_of_birth need not have to be masked as per the requirement . Just the function is given.
+
+ The output is saved as in ./fake_data/anonymised_data.csv. 
+
+
+
+How to run this application ?
+===============================
+
+step 1: extract latitude.zip in any folder (say c:/users/jjames)
+step 2: ensure that your files are extracted   ( i.e  c:/users/jjames/latitude )
+step 3: run the following command 
+         python.exe c:/users/jjames/latitude/customer/start.py
+
+
+How to run the testcases?
+============================
+Unit test are available in the   ...latitude/customer/test_cases/test_fake_data_generator.py
+These pytests can be executed as follows 
+
+step 1: Go to the project folder (i.e:  c:/users/jjames/latitude )
+            pytest -v
+
+
+Pyton Libraries Required
+========================
+pandas==1.1.5
+numpy==1.21.5
+pytest==7.4.4
+Faker==18.13.0
+
+
+
+
