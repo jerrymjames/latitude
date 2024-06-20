@@ -54,6 +54,29 @@ step 1: Go to the project folder (i.e:  c:/users/jjames/latitude )
             pytest -v
 
 
+How to run this application with docker ?
+===============================
+
+Step 1: Go to project folder and create a docker image
+Step 2: Run the command 
+                     docker build -t fakedatagenerator:1 .
+        This will create a docker image 
+Step 3: Ensure that the image is created
+Step 4: get inside the container by following the command below
+        docker run -it fakedatagenerator:1 /bin/bash
+Step 5: Run the command 
+		python ./customer/start.py
+Step 6: Now you can check the files with your editor of choice
+
+Note : You can install the editor with the following commands in container shell 
+            apt-get update
+	        apt-get install vim
+
+
+Please follow the instruction in the file HowToGuide.docx from page 5 onwards.
+This file contains the instructions with screenshot.
+
+
 Pyton Libraries Required
 ========================
 pandas==1.1.5
