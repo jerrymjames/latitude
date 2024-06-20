@@ -38,11 +38,12 @@ Step 2 : Anonimise the data generated in step 1
 
 How to run this application ?
 ===============================
+NOTE : replace <useraccount>  with your account in the following steps
 
-step 1: extract latitude.zip in any folder (say c:/users/jjames)
-step 2: ensure that your files are extracted   ( i.e  c:/users/jjames/latitude )
+step 1: extract latitude.zip in any folder (say c:/users/<useraccount>)
+step 2: ensure that your files are extracted   ( i.e  c:/users/<useraccount>/latitude )
 step 3: run the following command 
-         python.exe c:/users/jjames/latitude/customer/start.py
+         python.exe c:/users/<useraccount>/latitude/customer/start.py
 
 
 How to run the testcases?
@@ -50,7 +51,7 @@ How to run the testcases?
 Unit test are available in the   ...latitude/customer/test_cases/test_fake_data_generator.py
 These pytests can be executed as follows 
 
-step 1: Go to the project folder (i.e:  c:/users/jjames/latitude )
+step 1: Go to the project folder (i.e:  c:/users/<useraccount>/latitude )
             pytest -v
 
 
